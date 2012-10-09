@@ -8,11 +8,11 @@ logrotate but should do the job without blocking programs writing into the
 rotated file.
 
 ## Usage
-`
-Options:
-   --maxfiles <N>   : max number of files to save
-   --gz             : enable GZIP compression
-`
+
+    Usage: mylogrotate <file> [options]
+    Options:
+       --maxfiles <N>   : max number of files to save
+       --gz             : enable GZIP compression
 
 ## Running...
 This script is not working alone, you have to run it manually, basically
