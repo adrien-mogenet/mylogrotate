@@ -12,7 +12,7 @@
 
 # Display usage message
 usage() {
-  echo >&2 "Usage: `basename $0`: <file> [options]"
+  echo >&2 "Usage: `basename $0` <file> [options]"
   echo >&2 "Options:"
   echo >&2 "   --maxfiles <N>   : max number of files to save"
   echo >&2 "   --gz             : enable GZIP compression"
