@@ -37,17 +37,23 @@ rotate_file() {
   fi
 }
 
-FILE=$1
+FILE=
 COMPRESSION=
 MAX_FILES=5
 
 # Process input parameters
-shift
 while [ $# -gt 0 ]; do
   case "$1" in
     "--maxfiles") MAX_FILES="${2-'5'}"; shift ;;
     "--gz") COMPRESSION="GZ" ;;
-    *) echo >&2 "Unknown option: $1"; usage; exit 1 ;;
+    ("-h"|"--help") usage; exit 0 ;;
+    *)
+      if [ "${FILE}" == "" ]; then
+        FILE=$1
+      else
+        echo >&2 "Unknown option: $1"
+	usage; exit 1
+      fi
   esac
   shift
 done
